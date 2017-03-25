@@ -3,9 +3,18 @@ package composite
 // TODO
 
 case class HtmlElement(s: String) extends HtmlTag(s) {
-  override def setStartTag(tag: String): Unit = ???
 
-  override def setEndTag(tag: String): Unit = ???
+  var startTag: String = ""
+  var endTag: String = ""
+  var tagBody: String = ""
 
-  override def generateHtml: Unit = ???
+  override def setTagBody(tag: String) {tagBody=tag}
+
+  override def setStartTag(tag: String) {startTag=tag}
+
+  override def setEndTag(tag: String) {endTag=tag}
+
+  override def generateHtml {println(startTag+""+ tagBody +""+endTag);}
+
+  override def getTagName: String = {s}
 }

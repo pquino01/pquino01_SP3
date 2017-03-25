@@ -15,5 +15,5 @@ trait CarBuilder {
 
   def buildFuelType
 
-  def getCar: Car
+  def getCar(): Car
 }
