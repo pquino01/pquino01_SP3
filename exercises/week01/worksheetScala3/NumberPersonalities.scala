@@ -79,6 +79,105 @@ def testIsSquare {
 	}
 }
 
+def isSmug(n: Int): Boolean =  {
+	if (n < 2) { return false}
+    val res = n - findClosestInferiorSquare(n)
+	if (isSquare(res)) true else false
+} 
+
+def findClosestInferiorSquare(n: Int): Int = {
+	var closestSquare = 1
+	var i = 1
+	while (i<n){
+		if (isSquare(i)){closestSquare=i}
+		i+=1
+	}
+	closestSquare
+}
+
+def testIsSmug {
+	for( number <- 1 until 11){
+		if (isSmug(number)){println(s"$number is smug")}
+		else {println(s"$number is not smug")}
+	}
+}
+
+def isDishonest(n: Int): Boolean = {
+    var k = 1
+    while (n/k != k && n/k > k ) {
+      k += 1
+    }
+    if (n/k == k && k*k != n) true else false
+}
+
+def testIsDishonest {
+	for( number <- 1 until 11){
+		if (isDishonest(number)){println(s"$number is dishonest")}
+		else {println(s"$number is honest")}
+	}
+}
+
+def isPronic(n: Int): Boolean = {
+	var i=0
+	while (i<n){
+        if(i*(i+1) == n) {return true}
+		i+=1
+    }
+	return false
+}
+
+def testIsPronic {
+	for( number <- 1 until 11){
+		if (isPronic(number)){println(s"$number is pronic")}
+		else {println(s"$number is not pronic")}
+	}
+}
+
+def isDeficient(n: Int): Boolean = {
+    sumOfPositiveDivisorsOf(n) < n
+}
+
+def isPerfect(n: Int): Boolean = {
+    sumOfPositiveDivisorsOf(n) == n
+}
+
+def testIsPerfect {
+	for( number <- 1 until 11){
+		if (isPerfect(number)){println(s"$number is perfect")}
+		else {println(s"$number is not perfect")}
+	}
+}
+
+def isAbundant(n: Int): Boolean = {
+   sumOfPositiveDivisorsOf(n) > n
+}
+
+def sumOfPositiveDivisorsOf(n:Int): Int = {
+    var result = 0
+    for ( i <- 1 to n-1 if (n%i==0) ) {
+      result += i
+    }
+    result
+}
+
+def main(args: Array[String]): Unit = {
+	var print = ""
+    var n = 1
+    for ( n <- 1 to limit ) {
+      print = n + "   "
+      if (isPrime(n)) print += "p, " else print += "c, "
+      if (isHappy(n)) print += "h, " else print += "u, "
+      if (isTriangular(n)) print += "t, " else print +="not t, "
+      if (isSquare(n)) print += "s, " else print +="not s, "
+      if (isSmug(n)) print += "sm, " else print +="not sm, "
+      if (isDishonest(n)) print += "dis, " else print += "ht, "
+      if (isPronic(n)) print +="pr, " else print +="not pr, "
+      if (isDeficient(n)) print +="d"
+      if (isPerfect(n)) print +="per"
+      println(print)
+    }
+}
+
 
 
 
