@@ -1,28 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sml;
 
 /**
- * This class ....
- * <p>
- * An instance contains 32 registers and methods to access and change them
+ * Class representing the machine registers and has methods to access them aswell
+ * as change their contents.
  *
- * @author pablo
+ * @author Pablo Quinoa
  */
 public class Registers {
 
     private final static int NUMBEROFREGISTERS = 32;
+    
+    /**
+     * An array of integers that represents the machine registers
+     */
     private int registers[];
-
-    // Constructor: an instance whose registers are set to 0
 
     {
         registers = new int[NUMBEROFREGISTERS];
     }
 
+    /**
+     * Constructs a new Registers, an instance whose registers are set to 0
+     */
     public Registers() {
         for (int i = 0; i != registers.length; i++) {
             registers[i] = 0;
@@ -32,18 +31,41 @@ public class Registers {
     // Set register i to v.
     // Precondition: 0 <= i <= NUMBEROFREGISTERS
 
+    /**
+     * Setter method that sets register i, with v value.
+     *
+     * @param i the register index (reference)
+     * @param v the value to be stored in the given register
+     */
     public void setRegister(int i, int v) {
         registers[i] = v;
     }
 
+    /**
+     * Returns the content of a given register given the index
+     *
+     * @param i the register index (reference)
+     * 
+     * @return content of the register
+     */
     public int getRegister(int i) {
         return registers[i];
     }
 
+    /**
+     * Returns the registers array
+     * 
+     * @return the registers
+     */
     public int[] getRegisters() {
         return this.registers;
     }
 
+    /**
+     * Setter method that sets an array registers
+     *
+     * @param registers the array registers
+     */
     public void setRegisters(int[] registers) {
         this.registers = registers;
     }
