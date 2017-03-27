@@ -15,3 +15,4 @@ libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _)
 
 // This includes the instructor source directory for compilation.
 unmanagedSourceDirectories in Compile += baseDirectory.value / "src/instructor/scala"
+

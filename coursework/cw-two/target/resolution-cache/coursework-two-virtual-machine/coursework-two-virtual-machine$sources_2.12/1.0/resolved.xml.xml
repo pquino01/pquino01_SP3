@@ -4,7 +4,7 @@
 		module="coursework-two-virtual-machine$sources_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170317093711"
+		publication="20170327175931"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

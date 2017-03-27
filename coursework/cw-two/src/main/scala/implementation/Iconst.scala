@@ -4,7 +4,12 @@ import bc.{ByteCode, ByteCodeValues}
 import vm.VirtualMachine
 
 /**
-  * Created by pablo on 17/03/2017.
+  * This class represents the bytecote implementation of an Iconst.
+  *
+  * @constructor Creates a new Iconst with a 'num'
+  * @param num the integer to be loaded into the virtual machine stack
+  *
+  * @author Ullash Hazarika, Pablo Quinoa
   */
 class Iconst (num : Int) extends ByteCode  {
 

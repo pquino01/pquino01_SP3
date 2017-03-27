@@ -9,6 +9,8 @@ import vm.{VirtualMachine, VirtualMachineParser}
   * The `VirtualMachineFactory` follows the *factory pattern*. It provides
   * methods for each of the important parts in this assignment. You must
   * implement each method such that it returns an object of the correct type.
+  *
+  * @author Ullash Hazarika, Pablo Quinoa
   */
 object VirtualMachineFactory {
   // TODO
